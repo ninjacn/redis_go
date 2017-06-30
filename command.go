@@ -70,6 +70,19 @@ func Ping() (string, error) {
 	return string(msg[0]), nil
 }
 
+func Select(database int) (string, error) {
+	command := "*2\r\n$6\r\nSELECT\r\n$" + strconv.Itoa(len(string(database))) + "\r\n" + strconv.Itoa(database) + "\r\n"
+	_, err := conn.Write([]byte(command))
+	if err != nil {
+		return "", err
+	}
+	msg, err := resp()
+	if err != nil {
+		return "", err
+	}
+	return string(msg[0]), nil
+}
+
 func Get(key string) (string, error) {
 	command := "*2\r\n$3\r\nGET\r\n$" + strconv.Itoa(len(key)) + "\r\n" + key + "\r\n"
 	_, err := conn.Write([]byte(command))

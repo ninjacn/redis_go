@@ -12,11 +12,11 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	//ping, err := redis_go.Info()
+
+	//d, err := redis_go.Select(2)
 	//if err != nil {
 	//log.Fatal(err)
 	//}
-	//fmt.Printf("%q", ping)
 
 	//msg, err := redis_go.Set("name", "\"ming")
 	//if err != nil {
@@ -30,10 +30,10 @@ func main() {
 	//}
 	//fmt.Println(g)
 
-	g, err := redis_go.Incr("int")
+	age, err := redis_go.Incr("age")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(g)
+	fmt.Println(age)
 
 }
