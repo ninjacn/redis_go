@@ -3,5 +3,7 @@ go:
   - '1.6'
   - '1.7'
 
+services:
+  - redis-server
 script:
   - go test
