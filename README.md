@@ -1,5 +1,5 @@
 # redis_go
-
+[![Build Status](https://travis-ci.org/ninjacn/redis_go.svg?branch=master)](https://travis-ci.org/ninjacn/redis_go)
 <pre><code>
 package main
 
